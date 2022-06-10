@@ -1,0 +1,29 @@
+{
+  "name": "node.js-project",
+  "version": "1.0.0",
+  "description": "crud project on node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshupareek-10/node.js-project.git"
+  },
+  "keywords": [
+    "node.js",
+    "mongodb",
+    "crud"
+  ],
+  "author": "Himanshu Pareek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himanshupareek-10/node.js-project/issues"
+  },
+  "homepage": "https://github.com/himanshupareek-10/node.js-project#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0",
+    "nodemon": "^2.0.16"
+  }
+}
