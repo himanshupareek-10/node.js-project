@@ -1,25 +1,14 @@
-const { response } = require("express");
 const express = require("express");
-const connection = require("./config");
 
 const app = express();
 
+const get_router = require("./routes/get-route");
+const post_router = require("./routes/post-route");
+
 app.use(express.json());
+app.use('/get', get_router);
+app.use('/post', post_router);
 
-app.get("/", (req, res)=>{
-    connection.then(people=>people.find().toArray())
-    .then(data=>res.send(data));
-})
-
-app.post("/", (req, res)=>{
-    connection.then(people=>people.insertMany(req.body))
-    .then(result=>{
-        if(result.acknowledged){
-            res.send("Data is inserted");
-        }else{
-            res.send("Data is not inserted");
-        }
-    });
-})
-
-app.listen(3500);
+app.listen(3500, ()=>{
+    console.log('Server started at port 3500')
+});

@@ -4,7 +4,9 @@
   "description": "crud project on node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "mongodb": "^4.7.0",
+    "mongoose": "^6.4.0",
     "nodemon": "^2.0.16"
   }
 }
