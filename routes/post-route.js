@@ -1,17 +1,17 @@
 const express = require("express");
 require("../config");
-const PersonModel = require('../person');
+const PersonModel = require('../model/userModel');
 
 const router = express.Router();
 
 router.post("/", async (req, res)=>{
     try{
-        let Person = new PersonModel(req.body);
+        const Person = new PersonModel(req.body);
         await Person.save();
         res.status(200).send(Person);
     } catch (error) {
         if(error.name === "ValoidationError"){
-            let errors = {};
+            const errors = {};
             Object.keys(error.errors).forEach((key) => {
                 errors[key] = error.errors[key].message;
             });
